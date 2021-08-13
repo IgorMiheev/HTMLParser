@@ -12,7 +12,7 @@ public class MainApplication {
 			String inputString = in.next();
 
 			System.out.println("Your URL is: " + inputString);
-			System.out.println(Controller.Parse("https://www.simbirsoft.com/"));
+			System.out.println(Controller.getHTMLText("https://www.simbirsoft.com/"));
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(e.getMessage());
