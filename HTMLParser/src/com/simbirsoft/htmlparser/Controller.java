@@ -26,8 +26,9 @@ public class Controller {
 		// ')', '\n', '\r', '\t' };
 		String splitString = new String(" |,|\\.|!|\\?|\"|;|:|[|]|\\(|\\)|\n|\r|\t");
 		for (String word : inputString.split(splitString)) {
-			if (word != "")
+			if (!"".equals(word)) {
 				words.add(word);
+			}
 		}
 		return (String[]) words.toArray(new String[0]);
 	}
