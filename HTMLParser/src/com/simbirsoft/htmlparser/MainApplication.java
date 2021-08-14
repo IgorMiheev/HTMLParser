@@ -18,6 +18,8 @@ public class MainApplication {
 			for (String resultword : resultWords) {
 				System.out.println(resultword);
 			}
+			System.out.println(Controller.getStatisticsByWords(resultWords));
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(e.getMessage());

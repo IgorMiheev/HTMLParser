@@ -2,6 +2,7 @@ package com.simbirsoft.htmlparser;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.jsoup.Jsoup;
@@ -20,13 +21,26 @@ public class Controller {
 	}
 
 	public static String[] getWords(String inputString) {
-		List words = new ArrayList<String>();
+		List<String> words = new ArrayList<String>();
 		// char[] splitChars = { ' ', ',', '.', '!', '?', '"', ';', ':', '[', ']', '(',
 		// ')', '\n', '\r', '\t' };
 		String splitString = new String(" |,|\\.|!|\\?|\"|;|:|[|]|\\(|\\)|\n|\r|\t");
 		for (String word : inputString.split(splitString)) {
-			words.add(word);
+			if (word != "")
+				words.add(word);
 		}
 		return (String[]) words.toArray(new String[0]);
+	}
+
+	public static HashMap<String, Long> getStatisticsByWords(String[] words) {
+		HashMap<String, Long> statistics = new HashMap<String, Long>();
+		for (String word : words) {
+			if (statistics.containsKey(word)) {
+				statistics.replace(word, statistics.get(word) + 1);
+			} else {
+				statistics.put(word, 1L);
+			}
+		}
+		return statistics;
 	}
 }
