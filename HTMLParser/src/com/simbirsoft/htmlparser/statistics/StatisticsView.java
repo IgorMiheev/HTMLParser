@@ -29,9 +29,21 @@ public class StatisticsView {
 	public static URL returnInputURL() throws MalformedURLException {
 		System.out.print("Enter URL to get statistics: ");
 		Scanner in = new Scanner(System.in);
-		String inputString = in.next();
+		String inputString = null;
+		if (in.hasNext()) {
+			inputString = in.next();
+		}
+		URL url = null;
+		try {
+			url = new URL(inputString);
+			in.close();
+			return url;
+		} catch (MalformedURLException e) {
+			System.out.println("URL is not valid");
+			url = returnInputURL();
+		}
 		in.close();
-		URL url = new URL(inputString);
 		return url;
+
 	}
 }
