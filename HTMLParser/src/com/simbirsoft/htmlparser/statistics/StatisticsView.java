@@ -1,4 +1,4 @@
-package com.simbirsoft.htmlparser;
+package com.simbirsoft.htmlparser.statistics;
 
 import java.io.IOException;
 import java.util.ArrayList;

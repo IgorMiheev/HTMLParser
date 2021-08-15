@@ -7,6 +7,10 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.simbirsoft.htmlparser.statistics.Statistics;
+import com.simbirsoft.htmlparser.statistics.StatisticsController;
+import com.simbirsoft.htmlparser.statistics.StatisticsView;
+
 public class MainApplication {
 
 	public static void main(String[] args) {
@@ -18,7 +22,7 @@ public class MainApplication {
 			log.info("Starting HTMLParser...");
 			String url = returnInputURL();
 			Statistics model = retrieveStatisticsFromURL(url);
-//		Statistics model = retrieveStatisticsFromURL("https://www.simbirsoft.com/");
+//			Statistics model = retrieveStatisticsFromURL("https://www.simbirsoft.com/");
 			StatisticsView view = new StatisticsView();
 			StatisticsController controller = new StatisticsController(model, view);
 			controller.updateView();

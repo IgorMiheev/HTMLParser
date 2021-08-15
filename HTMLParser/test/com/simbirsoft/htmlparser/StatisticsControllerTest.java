@@ -7,6 +7,8 @@ import java.util.HashMap;
 
 import org.junit.jupiter.api.Test;
 
+import com.simbirsoft.htmlparser.statistics.StatisticsController;
+
 class StatisticsControllerTest {
 
 	@Test
