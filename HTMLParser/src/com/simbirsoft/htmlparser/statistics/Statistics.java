@@ -1,10 +1,10 @@
 package com.simbirsoft.htmlparser.statistics;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Scanner;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -12,6 +12,12 @@ import org.jsoup.nodes.Document;
 public class Statistics {
 
 	HashMap<String, Long> statisticInstance = new HashMap<String, Long>();
+
+	public Statistics(URL url) throws IOException {
+		String htmlTextString = Statistics.getHTMLText(url);
+		String[] htmlWords = Statistics.getWords(htmlTextString);
+		setInstance(Statistics.getStatisticsByWords(htmlWords));
+	}
 
 	public HashMap<String, Long> getInstance() {
 		return statisticInstance;
@@ -21,29 +27,8 @@ public class Statistics {
 		this.statisticInstance = instance;
 	}
 
-	public static String returnInputURL() {
-		System.out.print("Please enter URL:");
-		Scanner in = new Scanner(System.in);
-		String inputString = in.next();
-		in.close();
-		return inputString;
-	}
-
-	public static Statistics retrieveStatisticsFromURL(String URL) throws IOException {
-		Statistics statistics = new Statistics();
-		String htmlTextString = null;
-
-		htmlTextString = Statistics.getHTMLText(URL);
-
-		String[] htmlWords = Statistics.getWords(htmlTextString);
-		statistics.setInstance(Statistics.getStatisticsByWords(htmlWords));
-
-		return statistics;
-	}
-
-	public static String getHTMLText(String UrlAdress) throws IOException {
-
-		Document doc = Jsoup.connect(UrlAdress).get();
+	public static String getHTMLText(URL UrlAdress) throws IOException {
+		Document doc = Jsoup.connect(UrlAdress.toString()).get();
 		String text = doc.text();
 		return text;
 

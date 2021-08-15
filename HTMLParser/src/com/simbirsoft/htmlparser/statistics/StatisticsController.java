@@ -21,6 +21,6 @@ public class StatisticsController {
 	}
 
 	public void updateView() throws IOException {
-		view.printStatistics(model.getInstance());
+		view.printStatistics();
 	}
 }
