@@ -43,8 +43,6 @@ public class StatisticsController {
 	// splits a string into words
 	public static String[] getWords(String inputString) {
 		List<String> words = new ArrayList<String>();
-		// char[] splitChars = { ' ', ',', '.', '!', '?', '"', ';', ':', '[', ']', '(',
-		// ')', '\n', '\r', '\t' };
 		String splitString = new String(" |,|\\.|!|\\?|\"|;|:|[|]|\\(|\\)|\n|\r|\t");
 		for (String word : inputString.split(splitString)) {
 			if (!"".equals(word)) {

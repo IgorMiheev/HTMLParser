@@ -14,7 +14,7 @@ public class MainApplication {
 		controller.updateView();
 	}
 
-	private static Statistics retrieveStatisticsFromURL(String URL) {
+	public static Statistics retrieveStatisticsFromURL(String URL) {
 		Statistics statistics = new Statistics();
 		try {
 			String htmlTextString = StatisticsController.getHTMLText(URL);
