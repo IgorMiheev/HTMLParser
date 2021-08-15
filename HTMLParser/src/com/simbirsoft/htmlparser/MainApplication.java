@@ -14,15 +14,17 @@ public class MainApplication {
 	public static void main(String[] args) {
 		Logger log = Logger.getLogger(MainApplication.class.getName());
 		try {
-			Handler fh = new FileHandler("HTMLParser.log");
+			Handler logFileHandler = new FileHandler("HTMLParser.log");
 			log.setLevel(Level.ALL);
-			log.addHandler(fh);
+			log.addHandler(logFileHandler);
 			log.info("Starting HTMLParser...");
+
 			String url = Statistics.returnInputURL();
 			Statistics model = Statistics.retrieveStatisticsFromURL(url);
 //			Statistics model = retrieveStatisticsFromURL("https://www.simbirsoft.com/");
 			StatisticsView view = new StatisticsView();
 			StatisticsController controller = new StatisticsController(model, view);
+
 			controller.updateView();
 		} catch (Exception e) {
 			log.log(Level.SEVERE, "Exception: ", e);
