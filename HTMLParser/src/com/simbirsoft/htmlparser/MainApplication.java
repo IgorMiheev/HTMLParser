@@ -2,27 +2,40 @@ package com.simbirsoft.htmlparser;
 
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.FileHandler;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class MainApplication {
 
-	public static void main(String[] args) throws IOException {
-		String url = returnInputURL();
-		Statistics model = retrieveStatisticsFromURL(url);
+	public static void main(String[] args) {
+		Logger log = Logger.getLogger(MainApplication.class.getName());
+		try {
+			Handler fh = new FileHandler("HTMLParser.log");
+			log.setLevel(Level.ALL);
+			log.addHandler(fh);
+			log.info("Starting HTMLParser...");
+			String url = returnInputURL();
+			Statistics model = retrieveStatisticsFromURL(url);
 //		Statistics model = retrieveStatisticsFromURL("https://www.simbirsoft.com/");
-		StatisticsView view = new StatisticsView();
-		StatisticsController controller = new StatisticsController(model, view);
-		controller.updateView();
+			StatisticsView view = new StatisticsView();
+			StatisticsController controller = new StatisticsController(model, view);
+			controller.updateView();
+		} catch (Exception e) {
+			log.log(Level.SEVERE, "Exception: ", e);
+		}
 	}
 
-	public static Statistics retrieveStatisticsFromURL(String URL) {
+	public static Statistics retrieveStatisticsFromURL(String URL) throws IOException {
 		Statistics statistics = new Statistics();
-		try {
-			String htmlTextString = StatisticsController.getHTMLText(URL);
-			String[] htmlWords = StatisticsController.getWords(htmlTextString);
-			statistics.setInstance(StatisticsController.getStatisticsByWords(htmlWords));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		String htmlTextString = null;
+
+		htmlTextString = StatisticsController.getHTMLText(URL);
+
+		String[] htmlWords = StatisticsController.getWords(htmlTextString);
+		statistics.setInstance(StatisticsController.getStatisticsByWords(htmlWords));
+
 		return statistics;
 	}
 

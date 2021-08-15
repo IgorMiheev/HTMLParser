@@ -30,14 +30,11 @@ public class StatisticsController {
 	}
 
 	public static String getHTMLText(String UrlAdress) throws IOException {
-		try {
-			Document doc = Jsoup.connect(UrlAdress).get();
-			String text = doc.text();
-			return text;
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-			return "";
-		}
+
+		Document doc = Jsoup.connect(UrlAdress).get();
+		String text = doc.text();
+		return text;
+
 	}
 
 	// splits a string into words
