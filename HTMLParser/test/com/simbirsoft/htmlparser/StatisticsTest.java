@@ -7,14 +7,14 @@ import java.util.HashMap;
 
 import org.junit.jupiter.api.Test;
 
-import com.simbirsoft.htmlparser.statistics.StatisticsController;
+import com.simbirsoft.htmlparser.statistics.Statistics;
 
-class StatisticsControllerTest {
+class StatisticsTest {
 
 	@Test
 	void testGetWords() {
 
-		assertTrue(Arrays.equals(new String[] { "test", "123" }, StatisticsController.getWords("test 123")));
+		assertTrue(Arrays.equals(new String[] { "test", "123" }, Statistics.getWords("test 123")));
 	}
 
 	@Test
@@ -24,7 +24,7 @@ class StatisticsControllerTest {
 		testEntry.put("test", 2L);
 		testEntry.put("123", 1L);
 
-		assertTrue(StatisticsController.getStatisticsByWords(new String[] { "test", "123", "test" }).equals(testEntry));
+		assertTrue(Statistics.getStatisticsByWords(new String[] { "test", "123", "test" }).equals(testEntry));
 
 //		fail("Not yet implemented");
 	}

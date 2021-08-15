@@ -1,7 +1,5 @@
 package com.simbirsoft.htmlparser;
 
-import java.io.IOException;
-import java.util.Scanner;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
 import java.util.logging.Level;
@@ -20,8 +18,8 @@ public class MainApplication {
 			log.setLevel(Level.ALL);
 			log.addHandler(fh);
 			log.info("Starting HTMLParser...");
-			String url = returnInputURL();
-			Statistics model = retrieveStatisticsFromURL(url);
+			String url = Statistics.returnInputURL();
+			Statistics model = Statistics.retrieveStatisticsFromURL(url);
 //			Statistics model = retrieveStatisticsFromURL("https://www.simbirsoft.com/");
 			StatisticsView view = new StatisticsView();
 			StatisticsController controller = new StatisticsController(model, view);
@@ -29,25 +27,5 @@ public class MainApplication {
 		} catch (Exception e) {
 			log.log(Level.SEVERE, "Exception: ", e);
 		}
-	}
-
-	public static Statistics retrieveStatisticsFromURL(String URL) throws IOException {
-		Statistics statistics = new Statistics();
-		String htmlTextString = null;
-
-		htmlTextString = StatisticsController.getHTMLText(URL);
-
-		String[] htmlWords = StatisticsController.getWords(htmlTextString);
-		statistics.setInstance(StatisticsController.getStatisticsByWords(htmlWords));
-
-		return statistics;
-	}
-
-	public static String returnInputURL() {
-		System.out.print("Please enter URL:");
-		Scanner in = new Scanner(System.in);
-		String inputString = in.next();
-		in.close();
-		return inputString;
 	}
 }
