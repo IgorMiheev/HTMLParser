@@ -7,8 +7,8 @@ public class MainApplication {
 
 	public static void main(String[] args) throws IOException {
 		String url = returnInputURL();
-//		Statistics model = retrieveStatisticsFromURL(url);
-		Statistics model = retrieveStatisticsFromURL("https://www.simbirsoft.com/");
+		Statistics model = retrieveStatisticsFromURL(url);
+//		Statistics model = retrieveStatisticsFromURL("https://www.simbirsoft.com/");
 		StatisticsView view = new StatisticsView();
 		StatisticsController controller = new StatisticsController(model, view);
 		controller.updateView();
