@@ -8,7 +8,27 @@ import java.util.List;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-public class Controller {
+public class StatisticsController {
+	private Statistics model;
+	private StatisticsView view;
+
+	public StatisticsController(Statistics model, StatisticsView view) {
+		this.model = model;
+		this.view = view;
+	}
+
+	public HashMap<String, Long> getStatisticsInstance() {
+		return model.getInstance();
+	}
+
+	public void setModel(HashMap<String, Long> instance) {
+		model.setInstance(instance);
+	}
+
+	public void updateView() throws IOException {
+		view.printStatistics(model.getInstance());
+	}
+
 	public static String getHTMLText(String UrlAdress) throws IOException {
 		try {
 			Document doc = Jsoup.connect(UrlAdress).get();
@@ -20,6 +40,7 @@ public class Controller {
 		}
 	}
 
+	// splits a string into words
 	public static String[] getWords(String inputString) {
 		List<String> words = new ArrayList<String>();
 		// char[] splitChars = { ' ', ',', '.', '!', '?', '"', ';', ':', '[', ']', '(',
