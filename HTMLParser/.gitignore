@@ -2,4 +2,5 @@
 .project
 .settings/
 .classpath
-/HTMLParser.log
+/HTMLParser.log*
+/Parser.jar
