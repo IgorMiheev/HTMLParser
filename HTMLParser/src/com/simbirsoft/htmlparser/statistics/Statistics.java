@@ -37,9 +37,9 @@ public class Statistics {
 	// splits a string into words
 	public static String[] getWords(String inputString) {
 		List<String> words = new ArrayList<String>();
-		String splitString = new String(" |,|\\.|!|\\?|\"|;|:|[|]|\\(|\\)|\n|\r|\t");
+		String splitString = new String(" |,|\\.|!|\\?|\"|;|:|\\[|\\]|\\(|\\)|\n|\r|\t");
 		for (String word : inputString.split(splitString)) {
-			if (!"".equals(word)) {
+			if ((!"".equals(word)) && word != null) {
 				words.add(word);
 			}
 		}
@@ -57,4 +57,5 @@ public class Statistics {
 		}
 		return statistics;
 	}
+
 }

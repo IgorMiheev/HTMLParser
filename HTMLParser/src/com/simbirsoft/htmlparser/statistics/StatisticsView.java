@@ -36,8 +36,6 @@ public class StatisticsView {
 		URL url = null;
 		try {
 			url = new URL(inputString);
-			in.close();
-			return url;
 		} catch (MalformedURLException e) {
 			System.out.println("URL is not valid");
 			url = returnInputURL();

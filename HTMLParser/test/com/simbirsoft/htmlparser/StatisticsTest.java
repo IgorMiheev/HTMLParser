@@ -13,8 +13,8 @@ class StatisticsTest {
 
 	@Test
 	void testGetWords() {
-
-		assertTrue(Arrays.equals(new String[] { "test", "123" }, Statistics.getWords("test 123")));
+		assertTrue(Arrays.equals(new String[] { "te", "st", "123", "a", "b", "c", "d", "e", "f", "g", "h", "i" },
+				Statistics.getWords("te st!123;a.b,c?d:e[f]g(h)i")));
 	}
 
 	@Test
@@ -23,10 +23,9 @@ class StatisticsTest {
 		HashMap<String, Long> testEntry = new HashMap<String, Long>();
 		testEntry.put("test", 2L);
 		testEntry.put("123", 1L);
+		testEntry.put("12", 1L);
 
-		assertTrue(Statistics.getStatisticsByWords(new String[] { "test", "123", "test" }).equals(testEntry));
-
-//		fail("Not yet implemented");
+		assertTrue(Statistics.getStatisticsByWords(new String[] { "12", "test", "123", "test" }).equals(testEntry));
 	}
 
 }
