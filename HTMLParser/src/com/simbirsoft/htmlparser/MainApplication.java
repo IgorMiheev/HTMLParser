@@ -20,6 +20,9 @@ public class MainApplication {
 		log.setLevel(Level.ALL);
 
 		try {
+			if (!Files.exists(Paths.get(logFileName))) {
+				Files.createFile(Paths.get(logFileName));
+			}
 			if (Files.isWritable(Paths.get(logFileName))) {
 				Handler logFileHandler = new FileHandler(logFileName);
 				log.addHandler(logFileHandler);
