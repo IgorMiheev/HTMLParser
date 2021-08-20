@@ -32,7 +32,17 @@ public class MainApplication {
 				System.out.println("The log file is not recorded. Check the access settings");
 			}
 
-			URL url = StatisticsView.returnInputURL();
+			URL url;
+			if (args.length == 0) {
+				url = StatisticsView.returnInputURL();
+			} else {
+				if (args.length == 1) {
+					url = new URL(args[0]);
+				} else {
+					System.out.println("Only one parameter(URL) is allowed");
+					return;
+				}
+			}
 
 			Statistics model = new Statistics(url);
 			StatisticsView view = new StatisticsView(model);
