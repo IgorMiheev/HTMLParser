@@ -1,5 +1,7 @@
 package com.simbirsoft.htmlparser;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -8,16 +10,26 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.simbirsoft.htmlparser.statistics.Settings;
 import com.simbirsoft.htmlparser.statistics.Statistics;
 import com.simbirsoft.htmlparser.statistics.StatisticsController;
 import com.simbirsoft.htmlparser.statistics.StatisticsView;
 
 public class MainApplication {
-	public static String logFileName = "HTMLParser.log";
+
+	public static String logFileName = "HTMLParser.logsss";
 
 	public static void main(String[] args) {
 		Logger log = Logger.getLogger(MainApplication.class.getName());
 		log.setLevel(Level.ALL);
+		Settings settings = new Settings();
+		ClassLoader loader = settings.getClass().getClassLoader();
+		try (InputStream io = loader.getResourceAsStream("app.properties")) {
+			settings.load(io);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
 		try {
 			if (!Files.exists(Paths.get(logFileName))) {

@@ -19,7 +19,7 @@ class MainApplicationTest {
 			try {
 				Files.createFile(Paths.get(MainApplication.logFileName));
 			} catch (IOException e) {
-				fail("can't create log file");
+				fail("Can't create log file");
 			}
 			assertTrue(Files.isWritable(Paths.get(MainApplication.logFileName)));
 		}
