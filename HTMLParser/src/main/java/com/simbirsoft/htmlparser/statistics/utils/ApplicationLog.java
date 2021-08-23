@@ -18,6 +18,7 @@ public class ApplicationLog {
 		log.setLevel(logLevel);
 
 		String logFileName = settings.getValue("logFileName");
+		log.info("log path is " + logFileName);
 		try {
 			if (!Files.exists(Paths.get(logFileName))) {
 				Files.createDirectories(Paths.get(logFileName).getParent());

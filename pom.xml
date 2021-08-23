@@ -11,6 +11,9 @@
     <resources>
       <resource>
         <directory>HTMLParser/src</directory>
+         <includes>
+                <include>**/*.properties</include>
+            </includes>
         <excludes>
           <exclude>**/*.java</exclude>
         </excludes>
@@ -49,4 +52,7 @@
     <version>1.14.2</version>
 </dependency>
 </dependencies>
+  <properties>
+  	<logPath>/logs/HTMLParser.log</logPath>
+  </properties>
 </project>

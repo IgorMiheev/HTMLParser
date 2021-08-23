@@ -13,7 +13,7 @@ public class MainApplication {
 	public static void main(String[] args) throws SecurityException, NoSuchFieldException, ClassNotFoundException {
 
 		Settings settings = new Settings();
-		settings.loadFromClassLoader("./resources/app.properties");
+		settings.loadFromClassLoader("app.properties");
 		ApplicationLog applicationLog = new ApplicationLog(settings, MainApplication.class.getName());
 		applicationLog.log.info("Starting HTMLParser...");
 

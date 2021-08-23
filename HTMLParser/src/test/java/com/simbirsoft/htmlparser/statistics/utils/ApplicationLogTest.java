@@ -16,7 +16,7 @@ class ApplicationLogTest {
 	@Test
 	void TestApplicationLog() {
 		Settings settings = new Settings();
-		settings.loadFromClassLoader("./resources/app.properties");
+		settings.loadFromClassLoader("app.properties");
 		String logFileName = settings.getValue("logFileName");
 
 		if (Files.exists(Paths.get(logFileName))) {
