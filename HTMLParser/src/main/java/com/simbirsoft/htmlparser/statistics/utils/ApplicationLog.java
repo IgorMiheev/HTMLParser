@@ -1,4 +1,4 @@
-package com.simbirsoft.htmlparser.statistics.utils;
+package main.java.com.simbirsoft.htmlparser.statistics.utils;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -6,7 +6,7 @@ import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.simbirsoft.htmlparser.Settings;
+import main.java.com.simbirsoft.htmlparser.Settings;
 
 public class ApplicationLog {
 	private final Level logLevel = Level.ALL;

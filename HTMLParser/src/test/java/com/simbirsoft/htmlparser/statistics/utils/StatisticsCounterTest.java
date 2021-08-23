@@ -1,10 +1,12 @@
-package com.simbirsoft.htmlparser.statistics.utils;
+package test.java.com.simbirsoft.htmlparser.statistics.utils;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.HashMap;
 
 import org.junit.jupiter.api.Test;
+
+import main.java.com.simbirsoft.htmlparser.statistics.utils.StatisticsCounter;
 
 class StatisticsCounterTest {
 
@@ -19,5 +21,6 @@ class StatisticsCounterTest {
 		assertTrue(
 				StatisticsCounter.getStatisticsByWords(new String[] { "12", "test", "123", "test" }).equals(testEntry));
 	}
-
-}
+	
+	
+	}

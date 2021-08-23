@@ -1,4 +1,4 @@
-package com.simbirsoft.htmlparser.statistics;
+package main.java.com.simbirsoft.htmlparser.statistics;
 
 import java.io.IOException;
 import java.util.HashMap;

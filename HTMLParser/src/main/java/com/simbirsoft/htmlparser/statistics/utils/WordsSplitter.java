@@ -1,4 +1,4 @@
-package com.simbirsoft.htmlparser.statistics.utils;
+package main.java.com.simbirsoft.htmlparser.statistics.utils;
 
 import java.util.ArrayList;
 import java.util.List;

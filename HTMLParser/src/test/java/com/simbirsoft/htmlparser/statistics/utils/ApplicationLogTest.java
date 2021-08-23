@@ -1,7 +1,7 @@
-package com.simbirsoft.htmlparser.statistics.utils;
+package test.java.com.simbirsoft.htmlparser.statistics.utils;
 
-import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -9,12 +9,12 @@ import java.nio.file.Paths;
 
 import org.junit.jupiter.api.Test;
 
-import com.simbirsoft.htmlparser.Settings;
+import main.java.com.simbirsoft.htmlparser.Settings;
 
 class ApplicationLogTest {
 
 	@Test
-	void testApplicationLog() {
+	void TestApplicationLog() {
 		Settings settings = new Settings();
 		settings.loadFromClassLoader("./resources/app.properties");
 		String logFileName = settings.getValue("logFileName");

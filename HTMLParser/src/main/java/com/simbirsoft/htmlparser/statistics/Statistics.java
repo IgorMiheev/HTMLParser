@@ -1,4 +1,4 @@
-package com.simbirsoft.htmlparser.statistics;
+package main.java.com.simbirsoft.htmlparser.statistics;
 
 import java.io.IOException;
 import java.net.URL;
@@ -7,8 +7,8 @@ import java.util.HashMap;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import com.simbirsoft.htmlparser.statistics.utils.StatisticsCounter;
-import com.simbirsoft.htmlparser.statistics.utils.WordsSplitter;
+import main.java.com.simbirsoft.htmlparser.statistics.utils.StatisticsCounter;
+import main.java.com.simbirsoft.htmlparser.statistics.utils.WordsSplitter;
 
 public class Statistics {
 

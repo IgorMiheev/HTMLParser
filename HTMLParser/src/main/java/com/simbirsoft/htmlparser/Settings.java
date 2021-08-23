@@ -1,4 +1,4 @@
-package com.simbirsoft.htmlparser;
+package main.java.com.simbirsoft.htmlparser;
 
 import java.io.InputStream;
 import java.util.Properties;

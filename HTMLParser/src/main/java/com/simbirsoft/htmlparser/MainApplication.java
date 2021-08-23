@@ -1,12 +1,12 @@
-package com.simbirsoft.htmlparser;
+package main.java.com.simbirsoft.htmlparser;
 
 import java.net.URL;
 import java.util.logging.Level;
 
-import com.simbirsoft.htmlparser.statistics.Statistics;
-import com.simbirsoft.htmlparser.statistics.StatisticsController;
-import com.simbirsoft.htmlparser.statistics.StatisticsView;
-import com.simbirsoft.htmlparser.statistics.utils.ApplicationLog;
+import main.java.com.simbirsoft.htmlparser.statistics.Statistics;
+import main.java.com.simbirsoft.htmlparser.statistics.StatisticsController;
+import main.java.com.simbirsoft.htmlparser.statistics.StatisticsView;
+import main.java.com.simbirsoft.htmlparser.statistics.utils.ApplicationLog;
 
 public class MainApplication {
 

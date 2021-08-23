@@ -1,10 +1,12 @@
-package com.simbirsoft.htmlparser.statistics.utils;
+package test.java.com.simbirsoft.htmlparser.statistics.utils;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
+
+import main.java.com.simbirsoft.htmlparser.statistics.utils.WordsSplitter;
 
 class WordSplitterTest {
 
