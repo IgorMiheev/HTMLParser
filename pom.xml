@@ -8,15 +8,15 @@
 	<name>Program for parsing HTML</name>
 	<description>Get words statistics from URL</description>
 	<build>
-		<sourceDirectory>HTMLParser/src</sourceDirectory>
-		<testSourceDirectory>HTMLParser/src/test</testSourceDirectory>
+		<sourceDirectory>src</sourceDirectory>
+		<testSourceDirectory>src/test</testSourceDirectory>
 		<resources>
 			<resource>
-				<directory>HTMLParser/src</directory>
+				<directory>src</directory>
 
 			</resource>
 			<resource>
-				<directory>HTMLParser/src/main/resources</directory>
+				<directory>src/main/resources</directory>
 			</resource>
 		</resources>
 		<plugins>
@@ -52,7 +52,4 @@
 			<version>1.14.2</version>
 		</dependency>
 	</dependencies>
-	<properties>
-		<logPath>/logs/HTMLParser.log</logPath>
-	</properties>
 </project>
