@@ -6,7 +6,7 @@
 	<artifactId>HTMLParser</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Program for parsing HTML</name>
-	<description>Get words statistics from URL</description>
+	<description>Get words statistics from URLs</description>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<testSourceDirectory>src/test</testSourceDirectory>
